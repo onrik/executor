@@ -74,7 +74,7 @@ func Exec(cmd, dir string, env []string, stdin io.ReadCloser) ([]byte, []byte, e
 		}
 		err := commands[i].run(dir)
 		if err != nil {
-			return nil, nil, err
+			return stdout.Bytes(), stderr.Bytes(), err
 		}
 	}
 
