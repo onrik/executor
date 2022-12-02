@@ -13,11 +13,11 @@ package main
 import (
 	"fmt"
 
- 	"github.com/solar-jsoc/executor"
+ 	"github.com/onrik/executor/v2"
 )
 
 func main() {
-	stdOut, stdErr, err := executor.Exec("nmap -sV 1.1.1.1 -Pn -oX out.xml > /dev/null && cat out.xml", "", nil)
+	stdOut, stdErr, err := executor.Exec("nmap -sV 1.1.1.1 -Pn -oX out.xml > /dev/null && cat out.xml", "", nil, nil)
 	if err != nil {
 		fmt.Println(err)
 		fmt.Println(stdErr)
